@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Attendance Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+  <h2>EduTrack</h2>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="students.html">Students</a>
+  <a href="attendance.html">Attendance</a>
+  <a href="marks.html">Internal Marks</a>
+  <a href="aai.html">AAI Calculator</a>
+</div>
+
+<div class="main">
+  <h1>Smart Attendance Dashboard</h1>
+  <p class="subtitle">Academic Attendance & Performance Monitoring</p>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Total Students</h3>
+      <p>120</p>
+    </div>
+
+    <div class="card">
+      <h3>Average Attendance</h3>
+      <p>82%</p>
+    </div>
+
+    <div class="card">
+      <h3>Students At Risk</h3>
+      <p>15</p>
+    </div>
+  <div class="card">
+    <h3>Average AAI</h3>
+    <p>78</p>
+</div>
+</div>
+  <div class="panel">
+    <h2>Student Academic Status</h2>
+    <table>
+      <tr>
+        <th>Roll No</th>
+        <th>Name</th>
+        <th>Attendance</th>
+        <th>Internal</th>
+        <th>AAI</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+        <td>101</td>
+        <td>Ravi</td>
+        <td>86%</td>
+        <td>22/25</td>
+        <td>86.7</td>
+        <td><span class="good">Good</span></td>
+      </tr>
+      <tr>
+        <td>102</td>
+        <td>Sita</td>
+        <td>72%</td>
+        <td>16/25</td>
+        <td>69.2</td>
+        <td><span class="warning">Warning</span></td>
+      </tr>
+      <tr>
+        <td>103</td>
+        <td>Kiran</td>
+        <td>60%</td>
+        <td>10/25</td>
+        <td>53</td>
+        <td><span class="risk">At Risk</span></td>
+      </tr>
+    </table>
+    <h2>Attendance Analytics</h2>
+<canvas id="attendanceChart"></canvas>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const ctx = document.getElementById('attendanceChart');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Ravi', 'Sita', 'Kiran'],
+        datasets: [{
+            label: 'Attendance %',
+            data: [86, 72, 60],
+            backgroundColor: [
+                '#2563eb',
+                '#10b981',
+                '#ef4444'
+            ]
+        }]
+    },
+    options: {
+        responsive: true
+    }
+});
+</script>
+
+</body>
+</html>

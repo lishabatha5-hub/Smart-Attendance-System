@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Attendance Entry</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+  <h2>EduTrack</h2>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="students.html">Students</a>
+  <a href="attendance.html">Attendance</a>
+  <a href="marks.html">Internal Marks</a>
+</div>
+
+<div class="main">
+  <h1>Attendance Entry</h1>
+  <p class="subtitle">Enter class attendance details</p>
+
+  <div class="panel">
+<input type="text" id="rollNumber" placeholder="Roll Number">
+
+<input type="number" id="totalClasses" placeholder="Total Classes">
+
+<input type="number" id="classesAttended" placeholder="Classes Attended">
+
+<button onclick="calculateAttendance()">
+    Calculate Attendance
+</button>
+    <div class="result-box" id="attendanceResult">
+    Attendance Percentage: 0%
+</div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

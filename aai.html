@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AAI Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+  <h2>EduTrack</h2>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="students.html">Students</a>
+  <a href="attendance.html">Attendance</a>
+  <a href="marks.html">Internal Marks</a>
+  <a href="aai.html">AAI Calculator</a>
+</div>
+
+<div class="main">
+  <h1>Academic Attendance Index</h1>
+  <p class="subtitle">Calculate student academic standing</p>
+
+  <div class="panel">
+    <input type="number" id="attendance" placeholder="Attendance Percentage">
+    <input type="number" id="internal" placeholder="Internal Marks out of 25">
+
+    <button onclick="calculateAAI()">Calculate AAI</button>
+
+    <div id="result" class="result-box"></div>
+  </div>
+</div>
+
+<script>
+function calculateAAI() {
+  let attendance = Number(document.getElementById("attendance").value);
+  let internal = Number(document.getElementById("internal").value);
+
+  let internalPercentage = (internal / 25) * 100;
+  let aai = (attendance * 0.65) + (internalPercentage * 0.35);
+
+  let status = "";
+
+  if (aai >= 75) {
+    status = "Good Academic Standing";
+  } else if (aai >= 60) {
+    status = "Academic Warning";
+  } else {
+    status = "At Risk";
+  }
+
+  document.getElementById("result").innerHTML =
+    "<h2>AAI Score: " + aai.toFixed(2) + "</h2>" +
+    "<p>Status: " + status + "</p>";
+}
+</script>
+
+</body>
+</html>
