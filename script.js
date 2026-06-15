@@ -1,4 +1,3 @@
-alert("JS Loaded");
 function login() {
     window.location.href = "dashboard.html";
 }
